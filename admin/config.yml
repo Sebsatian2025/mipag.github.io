@@ -28,13 +28,13 @@ collections:
           - {label: "Título Principal (About)", name: "mainTitleAbout", widget: "string", default: "Sobre Nosotros"}
           - {label: "Subtítulo Principal (About)", name: "mainSubtitleAbout", widget: "markdown", default: "Conoce nuestra historia y misión."}
           - {label: "Texto Botón About", name: "buttonAboutText", widget: "string", default: "Leer Más"}
-          - {label: "URL Botón About", widget: "string", default: "#services"}
+          - {label: "URL Botón About", name: "buttonAboutUrl", widget: "string", default: "#services"} # CORREGIDO: Añadido name
 
           # --- SECCIÓN SERVICES ---
           - {label: "Título Principal (Services)", name: "mainTitleServices", widget: "string", default: "Nuestros Servicios"}
           - {label: "Imagen de Fondo (Services)", name: "heroBackgroundImageServices", widget: "image", default: "/assets/img/bg-callout.jpg"}
           - {label: "Texto Botón Services", name: "buttonServicesText", widget: "string", default: "Contáctanos"}
-          - {label: "URL Botón Services", widget: "string", default: "#contact"}
+          - {label: "URL Botón Services", name: "buttonServicesUrl", widget: "string", default: "#contact"} # CORREGIDO: Añadido name
 
           # --- SECCIÓN PORTFOLIO ---
           - {label: "Título Principal (Portfolio)", name: "mainTitlePortfolio", widget: "string", default: "Nuestro Trabajo"}
@@ -42,20 +42,20 @@ collections:
           - {label: "Subtexto Portfolio Imagen 1", name: "subtextPortfolioImage1", widget: "markdown", default: "Una descripción breve del proyecto uno."}
           - {label: "Imagen Portfolio 1", name: "portfolioImage1", widget: "image", default: "/assets/img/portfolio/fullsize/1.jpg"}
           - {label: "Texto Portfolio Imagen 2", name: "textPortfolioImage2", widget: "string", default: "Proyecto Dos"}
-          - {label: "Subtexto Portfolio Imagen 2", widget: "markdown", default: "Una descripción breve del proyecto dos."}
-          - {label: "Imagen Portfolio 2", widget: "image", default: "/assets/img/portfolio/fullsize/2.jpg"}
+          - {label: "Subtexto Portfolio Imagen 2", name: "subtextPortfolioImage2", widget: "markdown", default: "Una descripción breve del proyecto dos."} # CORREGIDO: Añadido name
+          - {label: "Imagen Portfolio 2", name: "portfolioImage2", widget: "image", default: "/assets/img/portfolio/fullsize/2.jpg"} # CORREGIDO: Añadido name
           - {label: "Texto Portfolio Imagen 3", name: "textPortfolioImage3", widget: "string", default: "Proyecto Tres"}
-          - {label: "Subtexto Portfolio Imagen 3", widget: "markdown", default: "Una descripción breve del proyecto tres."}
-          - {label: "Imagen Portfolio 3", widget: "image", default: "/assets/img/portfolio/fullsize/3.jpg"}
+          - {label: "Subtexto Portfolio Imagen 3", name: "subtextPortfolioImage3", widget: "markdown", default: "Una descripción breve del proyecto tres."} # CORREGIDO: Añadido name
+          - {label: "Imagen Portfolio 3", name: "portfolioImage3", widget: "image", default: "/assets/img/portfolio/fullsize/3.jpg"} # CORREGIDO: Añadido name
           - {label: "Texto Portfolio Imagen 4", name: "textPortfolioImage4", widget: "string", default: "Proyecto Cuatro"}
-          - {label: "Subtexto Portfolio Imagen 4", widget: "markdown", default: "Una descripción breve del proyecto cuatro."}
-          - {label: "Imagen Portfolio 4", widget: "image", default: "/assets/img/portfolio/fullsize/4.jpg"}
+          - {label: "Subtexto Portfolio Imagen 4", name: "subtextPortfolioImage4", widget: "markdown", default: "Una descripción breve del proyecto cuatro."} # CORREGIDO: Añadido name
+          - {label: "Imagen Portfolio 4", name: "portfolioImage4", widget: "image", default: "/assets/img/portfolio/fullsize/4.jpg"} # CORREGIDO: Añadido name
 
           # --- SECCIÓN CONTACTO ---
           - {label: "Título Principal (Contacto)", name: "mainTitleContact", widget: "string", default: "Contáctanos"}
           - {label: "Texto Botón Contacto 1", name: "buttonContact1Text", widget: "string", default: "Llámanos"}
           - {label: "URL Botón Contacto 1", name: "buttonContact1Url", widget: "string", default: "tel:+123456789"}
-          - {label: "Texto Botón Contacto 2", name: "buttonContact2Text", widget: "string", default: "Envíanos un Email"} # ¡CORREGIDO AQUÍ!
+          - {label: "Texto Botón Contacto 2", name: "buttonContact2Text", widget: "string", default: "Envíanos un Email"}
           - {label: "URL Botón Contacto 2", name: "buttonContact2Url", widget: "string", default: "mailto:info@example.com"}
 
           # --- FOOTER ---
