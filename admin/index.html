@@ -12,8 +12,8 @@
     window.CMS_MANUAL_INIT = true;
   </script>
   <!-- Carga el script de Netlify CMS -->
-  <!-- CAMBIO CRÍTICO: Usando jsdelivr.net y una versión específica para mayor estabilidad -->
-  <script src="https://cdn.jsdelivr.net/npm/netlify-cms-app@2.15.72/dist/netlify-cms-app.js"></script>
+  <!-- CAMBIO CRÍTICO: Volviendo a netlify-cms.js con una versión estable y conocida (2.10.19) -->
+  <script src="https://unpkg.com/netlify-cms@2.10.19/dist/netlify-cms.js"></script>
 </head>
 <body>
   <!-- Este div es el punto de montaje para Netlify CMS -->
@@ -26,7 +26,8 @@
       if (typeof CMS !== 'undefined' && CMS.init) { // Verifica que CMS y su método init existan
         CMS.init();
       } else {
-        console.error("Netlify CMS object (CMS) is still not defined or init method is missing after manual init setup. Please check script loading.");
+        // En caso de que persista el problema, registra un error más detallado.
+        console.error("Error crítico: El objeto CMS de Netlify no está definido o el método init falta. Por favor, revisa la carga del script y la consola para otros errores.");
       }
     }, 100); // Un pequeño retraso de 100ms debería ser suficiente con la carga manual
   </script>
