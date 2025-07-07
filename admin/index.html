@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Administración del Sitio</title>
   <!-- Carga el script de Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <!-- CAMBIO IMPORTANTE: Usando netlify-cms-app.js y @latest para la versión más reciente y optimizada -->
+  <script src="https://unpkg.com/netlify-cms-app@latest/dist/netlify-cms-app.js"></script>
 </head>
 <body>
   <!-- Este div es el punto de montaje para Netlify CMS -->
@@ -14,13 +15,13 @@
     // Se fuerza la inicialización de Netlify CMS con un pequeño retraso
     // Esto ayuda a asegurar que el script de CMS esté completamente cargado y el objeto CMS disponible.
     document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() { // Añadimos un retraso de 100ms
+      setTimeout(function() { // Añadimos un retraso de 500ms (antes 100ms)
         if (typeof CMS !== 'undefined') { // Verifica que CMS esté definido antes de llamar init()
           CMS.init();
         } else {
-          console.error("Netlify CMS object (CMS) is not defined after delay. Please check script loading.");
+          console.error("Netlify CMS object (CMS) is not defined after delay. Please check script loading and network tab.");
         }
-      }, 100); // Pequeño retraso en milisegundos
+      }, 500); // Aumentado el retraso a 500ms
     });
   </script>
 </body>
