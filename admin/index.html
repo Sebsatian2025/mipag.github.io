@@ -4,11 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Administración del Sitio</title>
+  <!--
+    IMPORTANTE: Se establece una variable global para forzar la inicialización manual del CMS.
+    Esto debe ir ANTES de cargar el script del CMS.
+  -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
   <!-- Carga el script de Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <!-- CAMBIO CRÍTICO: Volviendo a netlify-cms.js con una versión estable y conocida (2.10.19) -->
+  <script src="https://unpkg.com/netlify-cms@2.10.19/dist/netlify-cms.js"></script>
 </head>
 <body>
-  <!-- Punto correcto de montaje -->
+  <!-- Este div es el punto de montaje para Netlify CMS -->
   <div id="nc-root"></div>
+  <script>
+    // Se fuerza la inicialización de Netlify CMS explícitamente,
+    // ya que hemos establecido CMS_MANUAL_INIT = true.
+    // Se añade un pequeño retraso para asegurar que el script se haya cargado.
+    setTimeout(function() {
+      if (typeof CMS !== 'undefined' && CMS.init) { // Verifica que CMS y su método init existan
+        CMS.init();
+      } else {
+        // En caso de que persista el problema, registra un error más detallado.
+        console.error("Error crítico: El objeto CMS de Netlify no está definido o el método init falta. Por favor, revisa la carga del script y la consola para otros errores.");
+      }
+    }, 100); // Un pequeño retraso de 100ms debería ser suficiente con la carga manual
+  </script>
 </body>
 </html>
