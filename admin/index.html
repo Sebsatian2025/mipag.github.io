@@ -12,7 +12,15 @@
   <div id="nc-root"></div>
   <script>
     // Se fuerza la inicialización de Netlify CMS
-    CMS.init();
+    // Envuelto en DOMContentLoaded para asegurar que el CMS script esté cargado
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof CMS !== 'undefined') { // Verifica que CMS esté definido antes de llamar init()
+        CMS.init();
+      } else {
+        console.error("Netlify CMS object (CMS) is not defined. Retrying or checking script load.");
+        // Opcional: Podrías añadir un temporizador o un reintento aquí si el problema persiste
+      }
+    });
   </script>
 </body>
 </html>
