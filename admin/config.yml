@@ -18,45 +18,45 @@ collections:
         name: "home"
         fields:
           # --- SECCIÓN HOME ---
-          - {label: "Título Principal (Home)", name: "mainTitleHome", widget: "string", default: "Tu Próximo Gran Proyecto"}
-          - {label: "Subtítulo Principal (Home)", name: "mainSubtitleHome", widget: "markdown", default: "Un sitio web moderno y responsivo."}
-          - {label: "Texto Botón Home", name: "buttonHomeText", widget: "string", default: "Ver Más"}
-          - {label: "URL Botón Home", name: "buttonHomeUrl", widget: "string", default: "#about"}
-          - {label: "Imagen de Fondo (Home)", name: "heroBackgroundImageHome", widget: "image", default: "/assets/img/bg-masthead.jpg"}
+          - {label: "Título Principal (Home)", name: "mainTitleHome", widget: "string", default: "Tu Próximo Gran Proyecto", required: false}
+          - {label: "Subtítulo Principal (Home)", name: "mainSubtitleHome", widget: "markdown", default: "Un sitio web moderno y responsivo.", required: false}
+          - {label: "Texto Botón Home", name: "buttonHomeText", widget: "string", default: "Ver Más", required: false}
+          - {label: "URL Botón Home", name: "buttonHomeUrl", widget: "string", default: "#about", required: false}
+          - {label: "Imagen de Fondo (Home)", name: "heroBackgroundImageHome", widget: "image", default: "/assets/img/bg-masthead.jpg", required: false}
 
           # --- SECCIÓN ABOUT ---
-          - {label: "Título Principal (About)", name: "mainTitleAbout", widget: "string", default: "Sobre Nosotros"}
-          - {label: "Subtítulo Principal (About)", name: "mainSubtitleAbout", widget: "markdown", default: "Conoce nuestra historia y misión."}
-          - {label: "Texto Botón About", name: "buttonAboutText", widget: "string", default: "Leer Más"}
-          - {label: "URL Botón About", name: "buttonAboutUrl", widget: "string", default: "#services"} # CORREGIDO: Añadido name
+          - {label: "Título Principal (About)", name: "mainTitleAbout", widget: "string", default: "Sobre Nosotros", required: false}
+          - {label: "Subtítulo Principal (About)", name: "mainSubtitleAbout", widget: "markdown", default: "Conoce nuestra historia y misión.", required: false}
+          - {label: "Texto Botón About", name: "buttonAboutText", widget: "string", default: "Leer Más", required: false}
+          - {label: "URL Botón About", name: "buttonAboutUrl", widget: "string", default: "#services", required: false}
 
           # --- SECCIÓN SERVICES ---
-          - {label: "Título Principal (Services)", name: "mainTitleServices", widget: "string", default: "Nuestros Servicios"}
-          - {label: "Imagen de Fondo (Services)", name: "heroBackgroundImageServices", widget: "image", default: "/assets/img/bg-callout.jpg"}
-          - {label: "Texto Botón Services", name: "buttonServicesText", widget: "string", default: "Contáctanos"}
-          - {label: "URL Botón Services", name: "buttonServicesUrl", widget: "string", default: "#contact"} # CORREGIDO: Añadido name
+          - {label: "Título Principal (Services)", name: "mainTitleServices", widget: "string", default: "Nuestros Servicios", required: false}
+          - {label: "Imagen de Fondo (Services)", name: "heroBackgroundImageServices", widget: "image", default: "/assets/img/bg-callout.jpg", required: false}
+          - {label: "Texto Botón Services", name: "buttonServicesText", widget: "string", default: "Contáctanos", required: false}
+          - {label: "URL Botón Services", name: "buttonServicesUrl", widget: "string", default: "#contact", required: false}
 
           # --- SECCIÓN PORTFOLIO ---
-          - {label: "Título Principal (Portfolio)", name: "mainTitlePortfolio", widget: "string", default: "Nuestro Trabajo"}
-          - {label: "Texto Portfolio Imagen 1", name: "textPortfolioImage1", widget: "string", default: "Proyecto Uno"}
-          - {label: "Subtexto Portfolio Imagen 1", name: "subtextPortfolioImage1", widget: "markdown", default: "Una descripción breve del proyecto uno."}
-          - {label: "Imagen Portfolio 1", name: "portfolioImage1", widget: "image", default: "/assets/img/portfolio/fullsize/1.jpg"}
-          - {label: "Texto Portfolio Imagen 2", name: "textPortfolioImage2", widget: "string", default: "Proyecto Dos"}
-          - {label: "Subtexto Portfolio Imagen 2", name: "subtextPortfolioImage2", widget: "markdown", default: "Una descripción breve del proyecto dos."} # CORREGIDO: Añadido name
-          - {label: "Imagen Portfolio 2", name: "portfolioImage2", widget: "image", default: "/assets/img/portfolio/fullsize/2.jpg"} # CORREGIDO: Añadido name
-          - {label: "Texto Portfolio Imagen 3", name: "textPortfolioImage3", widget: "string", default: "Proyecto Tres"}
-          - {label: "Subtexto Portfolio Imagen 3", name: "subtextPortfolioImage3", widget: "markdown", default: "Una descripción breve del proyecto tres."} # CORREGIDO: Añadido name
-          - {label: "Imagen Portfolio 3", name: "portfolioImage3", widget: "image", default: "/assets/img/portfolio/fullsize/3.jpg"} # CORREGIDO: Añadido name
-          - {label: "Texto Portfolio Imagen 4", name: "textPortfolioImage4", widget: "string", default: "Proyecto Cuatro"}
-          - {label: "Subtexto Portfolio Imagen 4", name: "subtextPortfolioImage4", widget: "markdown", default: "Una descripción breve del proyecto cuatro."} # CORREGIDO: Añadido name
-          - {label: "Imagen Portfolio 4", name: "portfolioImage4", widget: "image", default: "/assets/img/portfolio/fullsize/4.jpg"} # CORREGIDO: Añadido name
+          - {label: "Título Principal (Portfolio)", name: "mainTitlePortfolio", widget: "string", default: "Nuestro Trabajo", required: false}
+          - {label: "Texto Portfolio Imagen 1", name: "textPortfolioImage1", widget: "string", default: "Proyecto Uno", required: false}
+          - {label: "Subtexto Portfolio Imagen 1", name: "subtextPortfolioImage1", widget: "markdown", default: "Una descripción breve del proyecto uno.", required: false}
+          - {label: "Imagen Portfolio 1", name: "portfolioImage1", widget: "image", default: "/assets/img/portfolio/fullsize/1.jpg", required: false}
+          - {label: "Texto Portfolio Imagen 2", name: "textPortfolioImage2", widget: "string", default: "Proyecto Dos", required: false}
+          - {label: "Subtexto Portfolio Imagen 2", name: "subtextPortfolioImage2", widget: "markdown", default: "Una descripción breve del proyecto dos.", required: false}
+          - {label: "Imagen Portfolio 2", name: "portfolioImage2", widget: "image", default: "/assets/img/portfolio/fullsize/2.jpg", required: false}
+          - {label: "Texto Portfolio Imagen 3", name: "textPortfolioImage3", widget: "string", default: "Proyecto Tres", required: false}
+          - {label: "Subtexto Portfolio Imagen 3", name: "subtextPortfolioImage3", widget: "markdown", default: "Una descripción breve del proyecto tres.", required: false}
+          - {label: "Imagen Portfolio 3", name: "portfolioImage3", widget: "image", default: "/assets/img/portfolio/fullsize/3.jpg", required: false}
+          - {label: "Texto Portfolio Imagen 4", name: "textPortfolioImage4", widget: "string", default: "Proyecto Cuatro", required: false}
+          - {label: "Subtexto Portfolio Imagen 4", name: "subtextPortfolioImage4", widget: "markdown", default: "Una descripción breve del proyecto cuatro.", required: false}
+          - {label: "Imagen Portfolio 4", name: "portfolioImage4", widget: "image", default: "/assets/img/portfolio/fullsize/4.jpg", required: false}
 
           # --- SECCIÓN CONTACTO ---
-          - {label: "Título Principal (Contacto)", name: "mainTitleContact", widget: "string", default: "Contáctanos"}
-          - {label: "Texto Botón Contacto 1", name: "buttonContact1Text", widget: "string", default: "Llámanos"}
-          - {label: "URL Botón Contacto 1", name: "buttonContact1Url", widget: "string", default: "tel:+123456789"}
-          - {label: "Texto Botón Contacto 2", name: "buttonContact2Text", widget: "string", default: "Envíanos un Email"}
-          - {label: "URL Botón Contacto 2", name: "buttonContact2Url", widget: "string", default: "mailto:info@example.com"}
+          - {label: "Título Principal (Contacto)", name: "mainTitleContact", widget: "string", default: "Contáctanos", required: false}
+          - {label: "Texto Botón Contacto 1", name: "buttonContact1Text", widget: "string", default: "Llámanos", required: false}
+          - {label: "URL Botón Contacto 1", name: "buttonContact1Url", widget: "string", default: "tel:+123456789", required: false}
+          - {label: "Texto Botón Contacto 2", name: "buttonContact2Text", widget: "string", default: "Envíanos un Email", required: false}
+          - {label: "URL Botón Contacto 2", name: "buttonContact2Url", widget: "string", default: "mailto:info@example.com", required: false}
 
           # --- FOOTER ---
-          - {label: "Texto del Footer", name: "subtextFooter", widget: "string", default: "Copyright © Tu Marca 2025"}
+          - {label: "Texto del Footer", name: "subtextFooter", widget: "string", default: "Copyright © Tu Marca 2025", required: false}
