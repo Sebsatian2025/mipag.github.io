@@ -11,15 +11,16 @@
   <!-- Este div es el punto de montaje para Netlify CMS -->
   <div id="nc-root"></div>
   <script>
-    // Se fuerza la inicialización de Netlify CMS
-    // Envuelto en DOMContentLoaded para asegurar que el CMS script esté cargado
+    // Se fuerza la inicialización de Netlify CMS con un pequeño retraso
+    // Esto ayuda a asegurar que el script de CMS esté completamente cargado y el objeto CMS disponible.
     document.addEventListener('DOMContentLoaded', function() {
-      if (typeof CMS !== 'undefined') { // Verifica que CMS esté definido antes de llamar init()
-        CMS.init();
-      } else {
-        console.error("Netlify CMS object (CMS) is not defined. Retrying or checking script load.");
-        // Opcional: Podrías añadir un temporizador o un reintento aquí si el problema persiste
-      }
+      setTimeout(function() { // Añadimos un retraso de 100ms
+        if (typeof CMS !== 'undefined') { // Verifica que CMS esté definido antes de llamar init()
+          CMS.init();
+        } else {
+          console.error("Netlify CMS object (CMS) is not defined after delay. Please check script loading.");
+        }
+      }, 100); // Pequeño retraso en milisegundos
     });
   </script>
 </body>
