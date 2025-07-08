@@ -1,6 +1,6 @@
 {
-  "mainTitleHome": "",
-  "mainSubtitleHome": "",
-  "buttonHomeText": "",
+  "mainTitleHome": "T﻿ITULO PRINCIPAL",
+  "mainSubtitleHome": "S﻿UBTITULO",
+  "buttonHomeText": "TEXTO BOTON ",
   "heroBackgroundImageHome": "/assets/uploads/bg-masthead.jpg"
 }
