@@ -16,10 +16,12 @@ collections:
       - file: "content/home.json" # Ruta al archivo JSON que contendrá todo el contenido editable
         label: "Página de Inicio"
         name: "home"
+        # ¡IMPORTANTE! Aquí es donde le decimos al CMS que use nuestro HomePreview para toda la entrada
+        preview: HomePreview
         fields:
           # --- SECCIÓN HOME ---
-          # Eliminamos la propiedad 'preview' de los campos individuales
-          - {label: "Título Principal (Home)", name: "mainTitleHome", widget: "string", default: "Tu Próximo Gran Proyecto", required: false}
+          # Cambiado a widget: "markdown" para permitir formato de texto
+          - {label: "Título Principal (Home)", name: "mainTitleHome", widget: "markdown", default: "Tu Próximo Gran Proyecto", required: false}
           - {label: "Subtítulo Principal (Home)", name: "mainSubtitleHome", widget: "markdown", default: "Un sitio web moderno y responsivo.", required: false}
           - {label: "Texto Botón Home", name: "buttonHomeText", widget: "string", default: "Ver Más", required: false}
           - {label: "URL Botón Home", name: "buttonHomeUrl", widget: "string", default: "#about", required: false}
@@ -43,13 +45,13 @@ collections:
           - {label: "Subtexto Portfolio Imagen 1", name: "subtextPortfolioImage1", widget: "markdown", default: "Una descripción breve del proyecto uno.", required: false}
           - {label: "Imagen Portfolio 1", name: "portfolioImage1", widget: "image", default: "/assets/img/portfolio/fullsize/1.jpg", required: false}
           - {label: "Texto Portfolio Imagen 2", name: "textPortfolioImage2", widget: "string", default: "Proyecto Dos", required: false}
-          - {label: "Subtexto Portfolio Imagen 2", name: "subtextPortfolioImage2", widget: "markdown", default: "Una descripción breve del proyecto dos.", required: false} # Corregido: Añadido 'name'
+          - {label: "Subtexto Portfolio Imagen 2", name: "subtextPortfolioImage2", widget: "markdown", default: "Una descripción breve del proyecto dos.", required: false}
           - {label: "Imagen Portfolio 2", name: "portfolioImage2", widget: "image", default: "/assets/img/portfolio/fullsize/2.jpg", required: false}
           - {label: "Texto Portfolio Imagen 3", name: "textPortfolioImage3", widget: "string", default: "Proyecto Tres", required: false}
-          - {label: "Subtexto Portfolio Imagen 3", name: "subtextPortfolioImage3", widget: "markdown", default: "Una descripción breve del proyecto tres.", required: false} # Corregido: Añadido 'name'
+          - {label: "Subtexto Portfolio Imagen 3", name: "subtextPortfolioImage3", widget: "markdown", default: "Una descripción breve del proyecto tres.", required: false}
           - {label: "Imagen Portfolio 3", name: "portfolioImage3", widget: "image", default: "/assets/img/portfolio/fullsize/3.jpg", required: false}
           - {label: "Texto Portfolio Imagen 4", name: "textPortfolioImage4", widget: "string", default: "Proyecto Cuatro", required: false}
-          - {label: "Subtexto Portfolio Imagen 4", name: "subtextPortfolioImage4", widget: "markdown", default: "Una descripción breve del proyecto cuatro.", required: false} # Corregido: Añadido 'name'
+          - {label: "Subtexto Portfolio Imagen 4", name: "subtextPortfolioImage4", widget: "markdown", default: "Una descripción breve del proyecto cuatro.", required: false}
           - {label: "Imagen Portfolio 4", name: "portfolioImage4", widget: "image", default: "/assets/img/portfolio/fullsize/4.jpg", required: false}
 
           # --- SECCIÓN CONTACTO ---
