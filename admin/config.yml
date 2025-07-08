@@ -61,5 +61,5 @@ collections:
           - {label: "Texto Botón Contacto 2", name: "buttonContact2Text", widget: "string", default: "Envíanos un Email", required: false}
           - {label: "URL Botón Contacto 2", name: "buttonContact2Url", widget: "string", default: "mailto:info@example.com", required: false}
 
-          # --- FOOTER ---
+          # -- FOOTER ---
           - {label: "Texto del Footer", name: "subtextFooter", widget: "string", default: "Copyright © Tu Marca 2025", required: false}
