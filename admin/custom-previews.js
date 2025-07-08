@@ -7,10 +7,15 @@
 class ImagePreview extends window.React.Component {
     render() {
       const { entry, getAsset, field } = this.props;
+      // Comprueba si entry o field son undefined antes de intentar acceder a ellos
+      if (!entry || !field) {
+        return null; // No renderiza nada si los datos no están disponibles
+      }
+  
       const image = getAsset(entry.getIn(['data', field.get('name')]));
   
       if (!image) {
-        return null;
+        return null;a
       }
   
       // Usando React.createElement en lugar de JSX
@@ -36,6 +41,11 @@ class ImagePreview extends window.React.Component {
   class MarkdownPreview extends window.React.Component {
     render() {
       const { entry, field } = this.props;
+      // Comprueba si entry o field son undefined antes de intentar acceder a ellos
+      if (!entry || !field) {
+        return null; // No renderiza nada si los datos no están disponibles
+      }
+  
       const markdownContent = entry.getIn(['data', field.get('name')]);
   
       if (!markdownContent) {
@@ -63,6 +73,11 @@ class ImagePreview extends window.React.Component {
   class StringPreview extends window.React.Component {
     render() {
       const { entry, field } = this.props;
+      // Comprueba si entry o field son undefined antes de intentar acceder a ellos
+      if (!entry || !field) {
+        return null; // No renderiza nada si los datos no están disponibles
+      }
+  
       const stringContent = entry.getIn(['data', field.get('name')]);
   
       if (!stringContent) {
