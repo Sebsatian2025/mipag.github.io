@@ -1,7 +1,9 @@
 {
   "buttonAboutText": "Mi princesa",
+  "buttonContact2Url": "https://www.facebook.com/share/1H9x55gJFs/?mibextid=wwXIfr",
   "mainTitleAbout": "Mi vida ",
   "mainSubtitleHome": "**Este es un cambio de prueba que hago ahora rápido**",
+  "buttonContact2Text": "Quien te quiere está acá ",
   "heroBackgroundImageServices": "/assets/uploads/0fcf3a1f-88f5-4548-9e6d-c0c9bc17cbf2.jpeg",
   "heroBackgroundImageHome": "/assets/uploads/9dc5b958-14b5-4d27-bbef-b4123798fe22.jpeg",
   "textPortfolioImage3": "Se llama Sofía.",
@@ -9,7 +11,7 @@
   "buttonAboutUrl": "https://www.facebook.com/share/192vjS3iZZ/?mibextid=wwXIfr",
   "mainSubtitleAbout": "Mi cielo",
   "mainTitleServices": "Mi reina ",
-  "mainTitleHome": "*Hola mi amor*",
+  "mainTitleHome": "# *Hola mi amor*",
   "portfolioImage1": "/assets/uploads/img_1769.jpeg",
   "buttonHomeText": "Tócame ",
   "portfolioImage2": "/assets/uploads/a48e8353-251c-4f51-a915-9c29bc38de6d.jpeg"
