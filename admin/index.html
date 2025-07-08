@@ -15,6 +15,9 @@
   <script>
     window.CMS_MANUAL_INIT = true;
   </script>
+  <!-- Carga de React y ReactDOM de un CDN (¡NUEVO!) -->
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
   <!-- Carga el script de Netlify CMS -->
   <!-- Volviendo a una versión específica y estable (2.10.19) de netlify-cms.js -->
   <script src="https://unpkg.com/netlify-cms@2.10.19/dist/netlify-cms.js"></script>
@@ -41,7 +44,7 @@
   </script>
 
   <!-- Carga el script de vistas previas personalizadas como un MÓDULO -->
-  <!-- Es crucial que este script se cargue DESPUÉS de netlify-cms.js y marked.js -->
+  <!-- Es crucial que este script se cargue DESPUÉS de React, ReactDOM, netlify-cms.js y marked.js -->
   <script src="/admin/custom-previews.js" type="module"></script>
 
   <!-- Script para forzar la inicialización de Netlify CMS explícitamente -->
