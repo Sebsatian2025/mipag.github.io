@@ -9,7 +9,7 @@
   <!-- Enlace al favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <!--
-    IMPORTANT: Se establece una variable global para forzar la inicialización manual del CMS.
+    IMPORTANTE: Se establece una variable global para forzar la inicialización manual del CMS.
     Esto debe ir ANTES de cargar el script del CMS.
   -->
   <script>
@@ -22,6 +22,12 @@
   <script src="https://unpkg.com/netlify-cms@2.10.19/dist/netlify-cms.js"></script>
   <!-- Carga la librería Marked.js para renderizar Markdown en las vistas previas -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Script para asegurar que 'marked' esté globalmente disponible como window.marked -->
+  <script>
+    if (typeof marked !== 'undefined' && typeof window.marked === 'undefined') {
+      window.marked = marked;
+    }
+  </script>
 </head>
 <body>
   <!-- Este div es el punto de montaje para Netlify CMS -->
@@ -44,24 +50,16 @@
 
   <!-- Script para forzar la inicialización de Netlify CMS explícitamente -->
   <script>
-    // Se fuerza la inicialización de Netlify CMS explícitamente,
-    // ya que hemos establecido CMS_MANUAL_INIT = true.
-    // Se añade un pequeño retraso para asegurar que el script se haya cargado y el DOM esté listo.
     setTimeout(function() {
-      if (typeof CMS !== 'undefined' && CMS.init) { // Verifica que CMS y su método init existan
+      if (typeof CMS !== 'undefined' && CMS.init) {
         CMS.init();
-        // Carga el script de vistas previas personalizadas como un MÓDULO
-        // Es crucial que este script se cargue DESPUÉS de CMS.init()
-        // para asegurar que CMS esté completamente inicializado.
-        const script = document.createElement('script');
-        script.src = '/admin/custom-previews.js';
-        script.type = 'module'; // Aseguramos que se carga como módulo
-        document.body.appendChild(script);
       } else {
-        // En caso de que persista el problema, registra un error más detallado.
-        console.error("Error crítico: El objeto CMS de Netlify no está definido o el método init falta. Por favor, revisa la carga del script y la consola para otros errores.");
+        console.error("Error crítico: El objeto CMS de Netlify no está definido o el método init falta.");
       }
-    }, 100); // Un pequeño retraso de 100ms debería ser suficiente con la carga manual
+    }, 100);
   </script>
+
+  <!-- Carga el script de vistas previas personalizadas como un MÓDULO -->
+  <script src="/admin/custom-previews.js" type="module"></script>
 </body>
 </html>
