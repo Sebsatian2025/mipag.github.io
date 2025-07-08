@@ -17,7 +17,6 @@ collections:
         label: "Página de Inicio"
         name: "home"
         # ¡IMPORTANTE! Aquí es donde le decimos al CMS que use nuestro HomePreview para toda la entrada
-        preview: HomePreview
         fields:
           # --- SECCIÓN HOME ---
           # Cambiado a widget: "markdown" para permitir formato de texto
