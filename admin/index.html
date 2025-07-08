@@ -4,62 +4,67 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Administración del Sitio</title>
-  <!-- Enlace al manifest.json para la PWA (para el panel de administración) -->
+
+  <!-- PWA y favicon -->
   <link rel="manifest" href="/manifest.json">
-  <!-- Enlace al favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <!--
-    IMPORTANTE: Se establece una variable global para forzar la inicialización manual del CMS.
-    Esto debe ir ANTES de cargar el script del CMS.
-  -->
+
+  <!-- Forzar inicialización manual de Netlify CMS -->
   <script>
     window.CMS_MANUAL_INIT = true;
   </script>
-  <!-- Carga de React y ReactDOM de un CDN -->
+
+  <!-- React y ReactDOM (Netlify CMS depende de ellos) -->
   <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-  <!-- Carga el script de Netlify CMS -->
+
+  <!-- Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@2.10.19/dist/netlify-cms.js"></script>
-  <!-- Carga la librería Marked.js para renderizar Markdown en las vistas previas -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <!-- Script para asegurar que 'marked' esté globalmente disponible como window.marked -->
+
+  <!-- Carga marked (renderizado de Markdown) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
   <script>
-    if (typeof marked !== 'undefined' && typeof window.marked === 'undefined') {
-      window.marked = marked;
+    if (typeof window.marked !== 'function') {
+      // Algunas versiones de marked se exportan como { default: [Function] }
+      if (typeof window.marked?.default === 'function') {
+        window.marked = window.marked.default;
+      } else {
+        console.error("⚠️ 'marked' fue cargado, pero no es una función válida:", window.marked);
+      }
     }
   </script>
 </head>
 <body>
-  <!-- Este div es el punto de montaje para Netlify CMS -->
+  <!-- Punto de montaje de Netlify CMS -->
   <div id="nc-root"></div>
 
-  <!-- Registro del Service Worker para PWA (para el panel de administración) -->
+  <!-- Service Worker para PWA -->
   <script>
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/service-worker.js')
-                  .then(registration => {
-                      console.log('Service Worker registrado con éxito para admin:', registration);
-                  })
-                  .catch(error => {
-                      console.log('Fallo en el registro del Service Worker para admin:', error);
-                  });
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('✅ Service Worker registrado para admin:', registration);
+          })
+          .catch(error => {
+            console.log('❌ Error registrando Service Worker:', error);
           });
-      }
+      });
+    }
   </script>
 
-  <!-- Script para forzar la inicialización de Netlify CMS explícitamente -->
+  <!-- Inicialización manual de Netlify CMS -->
   <script>
-    setTimeout(function() {
+    setTimeout(function () {
       if (typeof CMS !== 'undefined' && CMS.init) {
         CMS.init();
       } else {
-        console.error("Error crítico: El objeto CMS de Netlify no está definido o el método init falta.");
+        console.error("❌ CMS no está definido o init() no existe.");
       }
     }, 100);
   </script>
 
-  <!-- Carga el script de vistas previas personalizadas como un MÓDULO -->
+  <!-- Script de vistas previas personalizadas -->
   <script src="/admin/custom-previews.js"></script>
 </body>
 </html>
