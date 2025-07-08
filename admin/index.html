@@ -18,6 +18,8 @@
   <!-- Carga el script de Netlify CMS -->
   <!-- Volviendo a una versión específica y estable (2.10.19) de netlify-cms.js -->
   <script src="https://unpkg.com/netlify-cms@2.10.19/dist/netlify-cms.js"></script>
+  <!-- Carga la librería Marked.js para renderizar Markdown en las vistas previas -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <!-- Este div es el punto de montaje para Netlify CMS -->
@@ -39,6 +41,7 @@
   </script>
 
   <!-- Carga el script de vistas previas personalizadas como un MÓDULO -->
+  <!-- Es crucial que este script se cargue DESPUÉS de netlify-cms.js y marked.js -->
   <script src="/admin/custom-previews.js" type="module"></script>
 
   <!-- Script para forzar la inicialización de Netlify CMS explícitamente -->
