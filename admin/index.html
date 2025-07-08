@@ -6,6 +6,7 @@
   <title>Administración del Sitio</title>
   <!-- Enlace al manifest.json para la PWA (para el panel de administración) -->
   <link rel="manifest" href="/manifest.json">
+  <!-- Enlace al favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <!--
     IMPORTANTE: Se establece una variable global para forzar la inicialización manual del CMS.
@@ -36,6 +37,9 @@
           });
       }
   </script>
+
+  <!-- Carga el script de vistas previas personalizadas -->
+  <script src="/admin/custom-previews.js"></script>
 
   <!-- Script para forzar la inicialización de Netlify CMS explícitamente -->
   <script>
