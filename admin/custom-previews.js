@@ -1,3 +1,9 @@
+// No se usan importaciones de React, ReactDOM o marked aquí.
+// Netlify CMS proporciona React y ReactDOM globalmente.
+// marked debe cargarse como un script global en admin/index.html.
+
+// --- Componente de Vista Previa Principal para la Página de Inicio (HomePreview) ---
+// Este componente recibirá todos los datos de la entrada 'home.json'
 class HomePreview extends window.React.Component {
   render() {
     const { entry, getAsset } = this.props;
@@ -16,7 +22,8 @@ class HomePreview extends window.React.Component {
     };
     const getMarkdownHtml = (fieldName) => {
       const content = getField(fieldName);
-      return content ? window.marked(content) : '';
+      // Asegurarse de que window.marked es una función antes de llamarla
+      return content && typeof window.marked === 'function' ? window.marked(content) : content || '';
     };
     const getImageUrl = (fieldName) => {
       const path = getField(fieldName);
@@ -89,7 +96,8 @@ class HomePreview extends window.React.Component {
             { className: 'portfolio-item' },
             getImageUrl('portfolioImage1') && window.React.createElement('img', {
               src: getImageUrl('portfolioImage1'),
-              alt: 'Portfolio 1'
+              alt: 'Portfolio 1',
+              className: 'portfolio-image' // Añadido clase para estilos
             }),
             window.React.createElement('h3', {}, getField('textPortfolioImage1')),
             window.React.createElement('div', {
@@ -104,7 +112,8 @@ class HomePreview extends window.React.Component {
             { className: 'portfolio-item' },
             getImageUrl('portfolioImage2') && window.React.createElement('img', {
               src: getImageUrl('portfolioImage2'),
-              alt: 'Portfolio 2'
+              alt: 'Portfolio 2',
+              className: 'portfolio-image' // Añadido clase para estilos
             }),
             window.React.createElement('h3', {}, getField('textPortfolioImage2')),
             window.React.createElement('div', {
@@ -119,7 +128,8 @@ class HomePreview extends window.React.Component {
             { className: 'portfolio-item' },
             getImageUrl('portfolioImage3') && window.React.createElement('img', {
               src: getImageUrl('portfolioImage3'),
-              alt: 'Portfolio 3'
+              alt: 'Portfolio 3',
+              className: 'portfolio-image' // Añadido clase para estilos
             }),
             window.React.createElement('h3', {}, getField('textPortfolioImage3')),
             window.React.createElement('div', {
@@ -134,7 +144,8 @@ class HomePreview extends window.React.Component {
             { className: 'portfolio-item' },
             getImageUrl('portfolioImage4') && window.React.createElement('img', {
               src: getImageUrl('portfolioImage4'),
-              alt: 'Portfolio 4'
+              alt: 'Portfolio 4',
+              className: 'portfolio-image' // Añadido clase para estilos
             }),
             window.React.createElement('h3', {}, getField('textPortfolioImage4')),
             window.React.createElement('div', {
@@ -152,7 +163,7 @@ class HomePreview extends window.React.Component {
         window.React.createElement('h2', {}, getField('mainTitleContact')),
         window.React.createElement(
           'div',
-          {},
+          { className: 'contact-buttons-container' }, // Añadida clase para el contenedor de botones
           getField('buttonContact1Text') && window.React.createElement('a', {
             href: getField('buttonContact1Url'),
             className: 'preview-button preview-button-contact-1'
