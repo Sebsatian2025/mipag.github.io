@@ -43,13 +43,13 @@ collections:
           - {label: "Subtexto Portfolio Imagen 1", name: "subtextPortfolioImage1", widget: "markdown", default: "Una descripción breve del proyecto uno.", required: false}
           - {label: "Imagen Portfolio 1", name: "portfolioImage1", widget: "image", default: "/assets/img/portfolio/fullsize/1.jpg", required: false}
           - {label: "Texto Portfolio Imagen 2", name: "textPortfolioImage2", widget: "string", default: "Proyecto Dos", required: false}
-          - {label: "Subtexto Portfolio Imagen 2", widget: "markdown", default: "Una descripción breve del proyecto dos.", required: false}
+          - {label: "Subtexto Portfolio Imagen 2", name: "subtextPortfolioImage2", widget: "markdown", default: "Una descripción breve del proyecto dos.", required: false} # Corregido: Añadido 'name'
           - {label: "Imagen Portfolio 2", name: "portfolioImage2", widget: "image", default: "/assets/img/portfolio/fullsize/2.jpg", required: false}
           - {label: "Texto Portfolio Imagen 3", name: "textPortfolioImage3", widget: "string", default: "Proyecto Tres", required: false}
-          - {label: "Subtexto Portfolio Imagen 3", widget: "markdown", default: "Una descripción breve del proyecto tres.", required: false}
+          - {label: "Subtexto Portfolio Imagen 3", name: "subtextPortfolioImage3", widget: "markdown", default: "Una descripción breve del proyecto tres.", required: false} # Corregido: Añadido 'name'
           - {label: "Imagen Portfolio 3", name: "portfolioImage3", widget: "image", default: "/assets/img/portfolio/fullsize/3.jpg", required: false}
           - {label: "Texto Portfolio Imagen 4", name: "textPortfolioImage4", widget: "string", default: "Proyecto Cuatro", required: false}
-          - {label: "Subtexto Portfolio Imagen 4", widget: "markdown", default: "Una descripción breve del proyecto cuatro.", required: false}
+          - {label: "Subtexto Portfolio Imagen 4", name: "subtextPortfolioImage4", widget: "markdown", default: "Una descripción breve del proyecto cuatro.", required: false} # Corregido: Añadido 'name'
           - {label: "Imagen Portfolio 4", name: "portfolioImage4", widget: "image", default: "/assets/img/portfolio/fullsize/4.jpg", required: false}
 
           # --- SECCIÓN CONTACTO ---
