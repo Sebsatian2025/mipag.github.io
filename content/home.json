@@ -1,5 +1,6 @@
 {
   "mainTitleHome": "ESTO ES UNA PRUEBA DE BIENVENIDA",
   "mainSubtitleHome": "B﻿UENO ESTO TAMBIEN",
-  "buttonHomeText": "CHAU"
+  "buttonHomeText": "CHAU",
+  "heroBackgroundImageHome": "/assets/uploads/bg-masthead.jpg"
 }
